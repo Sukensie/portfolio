@@ -39,9 +39,9 @@ const Navbar = () => {
         <a
           href="/resume.pdf"
           target="_blank"
-          className="font-mono text-xs tracking-wider text-primary hover:text-foreground transition-colors"
+          className="font-mono text-xs tracking-wider bg-secondary px-4 py-2 rounded-lg text-foreground hover:bg-primary hover:text-primary-foreground transition-all"
         >
-          DOWNLOAD CV →
+          📄 Resume
         </a>
       </div>
     </motion.nav>

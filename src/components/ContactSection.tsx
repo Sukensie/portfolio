@@ -15,16 +15,16 @@ const ContactSection = () => {
             Get In Touch
           </p>
           <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-            Let's talk.
+            Let's connect! 🤝
           </h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto mb-12">
-            I'm actively looking for my next role. If you think I'd be a good fit
-            for your team, I'd love to hear from you.
+            I'm looking for my next opportunity and would love to hear from you — 
+            whether it's about a role, a project, or just to geek out about tech.
           </p>
 
           <a
             href="mailto:hello@yourdomain.com"
-            className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-10 py-4 rounded-lg font-medium text-lg hover:opacity-90 transition-opacity group"
+            className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-10 py-4 rounded-xl font-medium text-lg hover:opacity-90 transition-all hover:scale-[1.02] active:scale-[0.98] group"
           >
             <Mail className="w-5 h-5" />
             hello@yourdomain.com

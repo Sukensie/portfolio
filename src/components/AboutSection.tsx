@@ -10,8 +10,8 @@ const AboutSection = () => {
               About Me
             </p>
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
-              Engineer first,<br />
-              everything else second.
+              The person behind<br />
+              the code 🙂
             </h2>
           </div>
 
@@ -23,20 +23,19 @@ const AboutSection = () => {
             className="space-y-6"
           >
             <p className="text-muted-foreground leading-relaxed">
-              I'm a fullstack developer who's spent years in the trenches of 
-              production systems. I've debugged race conditions at 2 AM, 
-              migrated databases without downtime, and refactored codebases 
-              that everyone else was afraid to touch.
+              I'm a fullstack developer who genuinely enjoys the craft of building 
+              software. I've spent years shipping production systems — from late-night 
+              debugging sessions to those satisfying moments when everything just clicks.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              I've worked across startups moving fast and larger companies 
-              where reliability matters. I care about writing code that the 
-              next person can actually understand and maintain — because I've 
-              been that next person too many times.
+              I've worked across startups moving at breakneck speed and larger teams 
+              where stability and process matter. What stays consistent is my focus on 
+              writing code that's clean, testable, and kind to whoever reads it next.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              I learn quickly, communicate clearly, and I'm at my best 
-              when solving hard problems with a good team.
+              Outside of work, I'm usually tinkering with side projects, reading about 
+              distributed systems, or going down rabbit holes on Hacker News. I'm always 
+              up for a good technical conversation over coffee ☕
             </p>
 
             <div className="grid grid-cols-3 gap-8 pt-8 border-t border-border">

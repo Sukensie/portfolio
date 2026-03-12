@@ -1,46 +1,51 @@
 import { motion } from "framer-motion";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, Coffee } from "lucide-react";
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
-      {/* Subtle dot grid */}
-      <div className="absolute inset-0 opacity-[0.06]" style={{
-        backgroundImage: `radial-gradient(hsl(var(--foreground)) 1px, transparent 1px)`,
-        backgroundSize: '32px 32px'
-      }} />
-
-      {/* Accent glow */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full opacity-[0.04]"
-        style={{ background: 'radial-gradient(ellipse, hsl(152 60% 48%), transparent)' }}
+      {/* Soft gradient blobs */}
+      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full opacity-[0.035]"
+        style={{ background: 'radial-gradient(circle, hsl(155 55% 50%), transparent 70%)' }}
+      />
+      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full opacity-[0.025]"
+        style={{ background: 'radial-gradient(circle, hsl(175 50% 55%), transparent 70%)' }}
       />
 
       <div className="relative z-10 max-w-4xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex items-center gap-3 mb-8"
+          className="inline-flex items-center gap-2 bg-secondary rounded-full px-4 py-2 mb-8"
         >
           <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-          <p className="font-mono text-sm tracking-[0.2em] uppercase text-muted-foreground">
-            Open to opportunities
+          <p className="font-mono text-xs tracking-wide text-muted-foreground">
+            Open to opportunities — let's chat!
           </p>
+          <Coffee className="w-3.5 h-3.5 text-muted-foreground" />
         </motion.div>
 
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95] mb-8"
+          className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95] mb-4"
         >
-          Hey, I'm{" "}
-          <span className="text-gradient">Your Name</span>
-          <br />
-          <span className="text-muted-foreground text-4xl md:text-5xl lg:text-6xl font-medium">
-            fullstack engineer.
-          </span>
+          Hey there! 👋
         </motion.h1>
+        
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-8"
+        >
+          I'm <span className="text-gradient">Your Name</span>,{" "}
+          <span className="text-muted-foreground font-medium">
+            a fullstack engineer who loves building things.
+          </span>
+        </motion.h2>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -48,28 +53,28 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed mb-12"
         >
-          I build the systems behind products people rely on daily —
-          from real-time platforms to complex data pipelines. 
-          I care about clean architecture, test coverage, and shipping things that actually work.
+          I turn ideas into reliable, well-crafted software — from sleek frontends 
+          to robust backends. I enjoy solving tricky problems and working with 
+          people who care about getting things right.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="flex items-center gap-6"
+          className="flex flex-wrap items-center gap-4"
         >
           <a
             href="#projects"
-            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3.5 rounded-lg font-medium hover:opacity-90 transition-opacity"
+            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3.5 rounded-xl font-medium hover:opacity-90 transition-all hover:scale-[1.02] active:scale-[0.98]"
           >
-            See What I've Built
+            See What I've Built ↓
           </a>
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 border border-border px-8 py-3.5 rounded-lg font-medium text-foreground hover-glow"
+            className="inline-flex items-center gap-2 border border-border px-8 py-3.5 rounded-xl font-medium text-foreground hover-glow"
           >
-            Get In Touch
+            Say Hello 💬
           </a>
         </motion.div>
       </div>

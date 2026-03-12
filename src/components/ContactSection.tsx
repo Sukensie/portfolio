@@ -4,7 +4,7 @@ import { Mail, Github, Linkedin, ArrowUpRight } from "lucide-react";
 const ContactSection = () => {
   return (
     <section id="contact" className="py-32 px-6 border-t border-border">
-      <div className="max-w-6xl mx-auto text-center">
+      <div className="max-w-7xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -12,14 +12,14 @@ const ContactSection = () => {
           transition={{ duration: 0.6 }}
         >
           <p className="font-mono text-sm tracking-[0.3em] uppercase text-primary mb-4">
-            Let's Work Together
+            Get In Touch
           </p>
           <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-            Got a project in mind?
+            Let's talk.
           </h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto mb-12">
-            I'm currently available for freelance work and full-time positions.
-            Let's build something great together.
+            I'm actively looking for my next role. If you think I'd be a good fit
+            for your team, I'd love to hear from you.
           </p>
 
           <a

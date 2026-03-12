@@ -19,13 +19,13 @@ const Navbar = () => {
         scrolled ? "bg-background/80 backdrop-blur-lg border-b border-border" : ""
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="#" className="font-bold text-lg tracking-tight">
-          dev<span className="text-primary">.</span>
+          your<span className="text-primary">.</span>name
         </a>
 
         <div className="hidden md:flex items-center gap-8">
-          {["Projects", "About", "Contact"].map((item) => (
+          {["Projects", "Skills", "About", "Contact"].map((item) => (
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
@@ -37,10 +37,11 @@ const Navbar = () => {
         </div>
 
         <a
-          href="#contact"
+          href="/resume.pdf"
+          target="_blank"
           className="font-mono text-xs tracking-wider text-primary hover:text-foreground transition-colors"
         >
-          AVAILABLE FOR HIRE →
+          DOWNLOAD CV →
         </a>
       </div>
     </motion.nav>

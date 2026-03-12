@@ -21,14 +21,14 @@ const skillGroups = [
 
 const SkillsSection = () => {
   return (
-    <section className="py-32 px-6 border-t border-border">
-      <div className="max-w-6xl mx-auto">
+    <section id="skills" className="py-32 px-6 border-t border-border">
+      <div className="max-w-7xl mx-auto">
         <div className="mb-16">
           <p className="font-mono text-sm tracking-[0.3em] uppercase text-primary mb-4">
-            Capabilities
+            Tech Stack
           </p>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
-            Tools of the trade.
+            What I work with.
           </h2>
         </div>
 

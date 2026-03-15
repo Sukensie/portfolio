@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { User } from "lucide-react";
 
 const AboutSection = () => {
   return (
@@ -9,10 +10,25 @@ const AboutSection = () => {
             <p className="font-mono text-sm tracking-[0.3em] uppercase text-primary mb-4">
               About Me
             </p>
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-8">
               The person behind<br />
               the code 🙂
             </h2>
+
+            {/* Photo placeholder */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="relative w-64 h-72 rounded-2xl border-2 border-dashed border-border bg-card overflow-hidden flex items-center justify-center group"
+            >
+              <div className="text-center space-y-3">
+                <User className="w-16 h-16 text-muted-foreground mx-auto" />
+                <p className="text-sm text-muted-foreground font-mono">Your photo here</p>
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+            </motion.div>
           </div>
 
           <motion.div

@@ -20,70 +20,82 @@ interface SkillEdge {
 const GROUPS: Record<string, { color: string; hsl: string }> = {
   Frontend: { color: "hsl(155, 55%, 50%)", hsl: "155 55% 50%" },
   Backend: { color: "hsl(175, 50%, 55%)", hsl: "175 50% 55%" },
-  "DevOps": { color: "hsl(195, 45%, 55%)", hsl: "195 45% 55%" },
-  Practices: { color: "hsl(140, 40%, 55%)", hsl: "140 40% 55%" },
+  "DevOps & Cloud": { color: "hsl(195, 45%, 55%)", hsl: "195 45% 55%" },
+  "Data & Testing": { color: "hsl(140, 40%, 55%)", hsl: "140 40% 55%" },
 };
 
 const skills: Omit<SkillNode, "x" | "y" | "vx" | "vy">[] = [
-  { id: "react", label: "React", group: "Frontend", radius: 28 },
-  { id: "nextjs", label: "Next.js", group: "Frontend", radius: 24 },
-  { id: "typescript", label: "TypeScript", group: "Frontend", radius: 28 },
-  { id: "vue", label: "Vue.js", group: "Frontend", radius: 20 },
-  { id: "tailwind", label: "Tailwind", group: "Frontend", radius: 24 },
-  { id: "framer", label: "Framer Motion", group: "Frontend", radius: 20 },
+  // Frontend
+  { id: "react", label: "React", group: "Frontend", radius: 30 },
+  { id: "vue", label: "Vue / Nuxt", group: "Frontend", radius: 28 },
+  { id: "angular", label: "Angular", group: "Frontend", radius: 22 },
+  { id: "typescript", label: "TypeScript", group: "Frontend", radius: 32 },
+  { id: "tailwind", label: "Tailwind", group: "Frontend", radius: 26 },
+  { id: "html-css", label: "HTML / CSS", group: "Frontend", radius: 24 },
+  // Backend
   { id: "nodejs", label: "Node.js", group: "Backend", radius: 26 },
-  { id: "python", label: "Python", group: "Backend", radius: 24 },
-  { id: "go", label: "Go", group: "Backend", radius: 20 },
-  { id: "postgresql", label: "PostgreSQL", group: "Backend", radius: 24 },
-  { id: "redis", label: "Redis", group: "Backend", radius: 20 },
-  { id: "graphql", label: "GraphQL", group: "Backend", radius: 22 },
-  { id: "aws", label: "AWS", group: "DevOps", radius: 24 },
-  { id: "docker", label: "Docker", group: "DevOps", radius: 24 },
-  { id: "cicd", label: "CI/CD", group: "DevOps", radius: 22 },
-  { id: "terraform", label: "Terraform", group: "DevOps", radius: 20 },
-  { id: "vercel", label: "Vercel", group: "DevOps", radius: 22 },
-  { id: "linux", label: "Linux", group: "DevOps", radius: 20 },
-  { id: "sysdesign", label: "System Design", group: "Practices", radius: 22 },
-  { id: "testing", label: "Testing", group: "Practices", radius: 22 },
-  { id: "agile", label: "Agile", group: "Practices", radius: 20 },
-  { id: "performance", label: "Performance", group: "Practices", radius: 20 },
+  { id: "python", label: "Python", group: "Backend", radius: 28 },
+  { id: "flask", label: "Flask", group: "Backend", radius: 22 },
+  { id: "php", label: "PHP / Laravel", group: "Backend", radius: 22 },
+  { id: "c-cpp", label: "C / C++", group: "Backend", radius: 20 },
+  { id: "csharp", label: "C#", group: "Backend", radius: 20 },
+  { id: "rest-api", label: "REST API", group: "Backend", radius: 24 },
+  // DevOps & Cloud
+  { id: "aws", label: "AWS", group: "DevOps & Cloud", radius: 28 },
+  { id: "docker", label: "Docker", group: "DevOps & Cloud", radius: 26 },
+  { id: "kubernetes", label: "Kubernetes", group: "DevOps & Cloud", radius: 24 },
+  { id: "cicd", label: "GitHub Actions", group: "DevOps & Cloud", radius: 24 },
+  { id: "linux", label: "Linux", group: "DevOps & Cloud", radius: 22 },
+  { id: "grafana", label: "Grafana", group: "DevOps & Cloud", radius: 20 },
+  // Data & Testing
+  { id: "postgresql", label: "PostgreSQL", group: "Data & Testing", radius: 26 },
+  { id: "mysql", label: "MySQL", group: "Data & Testing", radius: 22 },
+  { id: "mongodb", label: "MongoDB", group: "Data & Testing", radius: 22 },
+  { id: "kafka", label: "Apache Kafka", group: "Data & Testing", radius: 22 },
+  { id: "playwright", label: "Playwright", group: "Data & Testing", radius: 22 },
+  { id: "vitest", label: "Vitest", group: "Data & Testing", radius: 20 },
+  { id: "figma", label: "Figma", group: "Frontend", radius: 20 },
 ];
 
 const edges: SkillEdge[] = [
   // Frontend connections
-  { source: "react", target: "nextjs" },
   { source: "react", target: "typescript" },
   { source: "react", target: "tailwind" },
-  { source: "react", target: "framer" },
-  { source: "nextjs", target: "vercel" },
-  { source: "nextjs", target: "typescript" },
   { source: "vue", target: "typescript" },
-  { source: "tailwind", target: "vue" },
+  { source: "vue", target: "tailwind" },
+  { source: "vue", target: "nodejs" },
+  { source: "angular", target: "typescript" },
+  { source: "html-css", target: "tailwind" },
+  { source: "figma", target: "html-css" },
+  { source: "figma", target: "tailwind" },
   // Backend connections
   { source: "nodejs", target: "typescript" },
-  { source: "nodejs", target: "graphql" },
+  { source: "nodejs", target: "rest-api" },
   { source: "nodejs", target: "postgresql" },
-  { source: "nodejs", target: "redis" },
+  { source: "python", target: "flask" },
   { source: "python", target: "postgresql" },
-  { source: "python", target: "aws" },
-  { source: "go", target: "docker" },
-  { source: "go", target: "linux" },
-  { source: "graphql", target: "react" },
-  { source: "postgresql", target: "redis" },
+  { source: "python", target: "kafka" },
+  { source: "flask", target: "rest-api" },
+  { source: "php", target: "mysql" },
+  { source: "rest-api", target: "react" },
+  { source: "c-cpp", target: "linux" },
+  { source: "csharp", target: "rest-api" },
   // DevOps connections
+  { source: "docker", target: "kubernetes" },
   { source: "docker", target: "aws" },
-  { source: "docker", target: "cicd" },
   { source: "docker", target: "linux" },
-  { source: "aws", target: "terraform" },
-  { source: "cicd", target: "vercel" },
-  { source: "cicd", target: "testing" },
-  // Practices connections
-  { source: "sysdesign", target: "performance" },
-  { source: "sysdesign", target: "aws" },
-  { source: "testing", target: "agile" },
-  { source: "testing", target: "typescript" },
-  { source: "performance", target: "redis" },
-  { source: "performance", target: "react" },
+  { source: "aws", target: "cicd" },
+  { source: "cicd", target: "playwright" },
+  { source: "cicd", target: "vitest" },
+  { source: "kubernetes", target: "grafana" },
+  { source: "grafana", target: "aws" },
+  // Data connections
+  { source: "postgresql", target: "mysql" },
+  { source: "mongodb", target: "nodejs" },
+  { source: "kafka", target: "docker" },
+  { source: "playwright", target: "typescript" },
+  { source: "vitest", target: "typescript" },
+  { source: "playwright", target: "react" },
 ];
 
 const SkillWeb = () => {
@@ -99,20 +111,20 @@ const SkillWeb = () => {
 
   const initNodes = useCallback((w: number, h: number) => {
     const groupCenters: Record<string, { cx: number; cy: number }> = {
-      Frontend: { cx: w * 0.25, cy: h * 0.35 },
-      Backend: { cx: w * 0.75, cy: h * 0.35 },
-      DevOps: { cx: w * 0.75, cy: h * 0.7 },
-      Practices: { cx: w * 0.25, cy: h * 0.7 },
+      Frontend: { cx: w * 0.25, cy: h * 0.3 },
+      Backend: { cx: w * 0.75, cy: h * 0.3 },
+      "DevOps & Cloud": { cx: w * 0.75, cy: h * 0.72 },
+      "Data & Testing": { cx: w * 0.25, cy: h * 0.72 },
     };
 
     nodesRef.current = skills.map((s) => {
       const gc = groupCenters[s.group];
       return {
         ...s,
-        x: gc.cx + (Math.random() - 0.5) * w * 0.2,
-        y: gc.cy + (Math.random() - 0.5) * h * 0.2,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.3,
+        x: gc.cx + (Math.random() - 0.5) * w * 0.22,
+        y: gc.cy + (Math.random() - 0.5) * h * 0.18,
+        vx: 0,
+        vy: 0,
       };
     });
   }, []);
@@ -154,7 +166,6 @@ const SkillWeb = () => {
       const mouse = mouseRef.current;
       const hovered = hoveredRef.current;
 
-      // Simple force simulation
       for (let i = 0; i < nodes.length; i++) {
         const a = nodes[i];
 
@@ -164,10 +175,10 @@ const SkillWeb = () => {
           const dx = b.x - a.x;
           const dy = b.y - a.y;
           const dist = Math.sqrt(dx * dx + dy * dy) || 1;
-          const minDist = a.radius + b.radius + 30;
+          const minDist = a.radius + b.radius + 35;
 
           if (dist < minDist) {
-            const force = (minDist - dist) * 0.02;
+            const force = (minDist - dist) * 0.015;
             const fx = (dx / dist) * force;
             const fy = (dy / dist) * force;
             a.vx -= fx;
@@ -185,8 +196,8 @@ const SkillWeb = () => {
           const dx = other.x - a.x;
           const dy = other.y - a.y;
           const dist = Math.sqrt(dx * dx + dy * dy) || 1;
-          const targetDist = 120;
-          const force = (dist - targetDist) * 0.001;
+          const targetDist = 140;
+          const force = (dist - targetDist) * 0.0008;
           a.vx += (dx / dist) * force;
           a.vy += (dy / dist) * force;
         }
@@ -194,24 +205,24 @@ const SkillWeb = () => {
         // Center gravity
         const cx = w / 2;
         const cy = h / 2;
-        a.vx += (cx - a.x) * 0.0001;
-        a.vy += (cy - a.y) * 0.0001;
+        a.vx += (cx - a.x) * 0.00008;
+        a.vy += (cy - a.y) * 0.00008;
 
-        // Mouse interaction - attract hovered, push others slightly
+        // Mouse interaction
         if (mouse && hovered) {
           if (a.id === hovered) {
-            a.vx += (mouse.x - a.x) * 0.02;
-            a.vy += (mouse.y - a.y) * 0.02;
+            a.vx += (mouse.x - a.x) * 0.015;
+            a.vy += (mouse.y - a.y) * 0.015;
           }
         }
 
-        // Gentle drift
-        a.vx += (Math.random() - 0.5) * 0.02;
-        a.vy += (Math.random() - 0.5) * 0.02;
+        // Very gentle drift (much less wobbly)
+        a.vx += (Math.random() - 0.5) * 0.005;
+        a.vy += (Math.random() - 0.5) * 0.005;
 
-        // Damping
-        a.vx *= 0.96;
-        a.vy *= 0.96;
+        // Stronger damping = less wobbly
+        a.vx *= 0.92;
+        a.vy *= 0.92;
 
         // Update position
         a.x += a.vx;
@@ -219,10 +230,10 @@ const SkillWeb = () => {
 
         // Boundaries
         const pad = a.radius + 10;
-        if (a.x < pad) { a.x = pad; a.vx *= -0.5; }
-        if (a.x > w - pad) { a.x = w - pad; a.vx *= -0.5; }
-        if (a.y < pad) { a.y = pad; a.vy *= -0.5; }
-        if (a.y > h - pad) { a.y = h - pad; a.vy *= -0.5; }
+        if (a.x < pad) { a.x = pad; a.vx *= -0.3; }
+        if (a.x > w - pad) { a.x = w - pad; a.vx *= -0.3; }
+        if (a.y < pad) { a.y = pad; a.vy *= -0.3; }
+        if (a.y > h - pad) { a.y = h - pad; a.vy *= -0.3; }
       }
     };
 
@@ -274,9 +285,9 @@ const SkillWeb = () => {
         // Glow for hovered
         if (isHovered) {
           ctx.beginPath();
-          ctx.arc(node.x, node.y, r + 12, 0, Math.PI * 2);
-          const glow = ctx.createRadialGradient(node.x, node.y, r, node.x, node.y, r + 12);
-          glow.addColorStop(0, groupColor.color.replace(")", ", 0.2)").replace("hsl(", "hsla("));
+          ctx.arc(node.x, node.y, r + 14, 0, Math.PI * 2);
+          const glow = ctx.createRadialGradient(node.x, node.y, r, node.x, node.y, r + 14);
+          glow.addColorStop(0, groupColor.color.replace(")", ", 0.25)").replace("hsl(", "hsla("));
           glow.addColorStop(1, "transparent");
           ctx.fillStyle = glow;
           ctx.fill();
@@ -302,7 +313,8 @@ const SkillWeb = () => {
         ctx.stroke();
 
         // Label
-        ctx.font = `${isHovered ? "600" : "500"} ${isHovered ? 11 : 10}px 'Space Grotesk', sans-serif`;
+        const fontSize = isHovered ? 12 : 11;
+        ctx.font = `${isHovered ? "600" : "500"} ${fontSize}px 'Space Grotesk', sans-serif`;
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
         ctx.fillStyle = isDimmed
@@ -368,7 +380,7 @@ const SkillWeb = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-[500px] md:h-[600px]">
+    <div className="relative w-full h-[600px] md:h-[750px] lg:h-[800px]">
       <canvas
         ref={canvasRef}
         className="w-full h-full rounded-xl"

@@ -32,6 +32,8 @@ jobs:
 
       - name: Build
         run: bun run build
+        env:
+          CUSTOM_DOMAIN: true
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

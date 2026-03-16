@@ -15,11 +15,11 @@ const ContactSection = () => {
             Get In Touch
           </p>
           <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-            Let's connect! 🤝
+            Open to work - let's talk!
           </h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto mb-12">
-            I'm looking for my next opportunity and would love to hear from you — 
-            whether it's about a role, a project, or just to geek out about tech.
+            I'm currently looking for fullstack, frontend, or backend roles&nbsp;—&nbsp;ideally in a place that values lean thinking as much as clean code. If you're building something interesting and need someone who won't over-engineer your MVP, I'm also all ears. <br/>My inbox is open 24/7 😉 
+
           </p>
 
           <a
@@ -27,21 +27,21 @@ const ContactSection = () => {
             className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-10 py-4 rounded-xl font-medium text-lg hover:opacity-90 transition-all hover:scale-[1.02] active:scale-[0.98] group"
           >
             <Mail className="w-5 h-5" />
-            hello@yourdomain.com
+            tomas@soucek.dk
             <ArrowUpRight className="w-4 h-4 opacity-60 group-hover:opacity-100 transition-opacity" />
           </a>
 
           <div className="flex items-center justify-center gap-6 mt-12">
             {[
-              { icon: Github, label: "GitHub", href: "https://github.com" },
-              { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com" },
+              { icon: Github, label: "GitHub", href: "https://github.com/sukensie" },
+              { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/soucek-tomas/" },
             ].map(({ icon: Icon, label, href }) => (
               <a
                 key={label}
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors font-mono text-sm"
+                className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors font-mono text-sm bg-secondary px-2 py-1 rounded-lg"
               >
                 <Icon className="w-4 h-4" />
                 {label}

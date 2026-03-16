@@ -64,6 +64,19 @@ This project is built with:
 
 Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
 
+## Deploy to GitHub Pages
+
+This repository is configured to auto-deploy to GitHub Pages using GitHub Actions.
+
+1. Push your code to the `main` branch.
+2. In GitHub, go to Settings -> Pages.
+3. Under Build and deployment, set Source to GitHub Actions.
+4. The workflow in `.github/workflows/deploy-pages.yml` will build and publish the site.
+
+After the workflow completes, your site will be available at:
+
+`https://<your-github-username>.github.io/<your-repo-name>/`
+
 ## Can I connect a custom domain to my Lovable project?
 
 Yes, you can!

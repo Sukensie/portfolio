@@ -26,35 +26,35 @@ const GROUPS: Record<string, { color: string; hsl: string }> = {
 
 const skills: Omit<SkillNode, "x" | "y" | "vx" | "vy">[] = [
   // Frontend
-  { id: "react", label: "React", group: "Frontend", radius: 30 },
-  { id: "vue", label: "Vue / Nuxt", group: "Frontend", radius: 28 },
-  { id: "angular", label: "Angular", group: "Frontend", radius: 22 },
-  { id: "typescript", label: "TypeScript", group: "Frontend", radius: 32 },
-  { id: "tailwind", label: "Tailwind", group: "Frontend", radius: 26 },
-  { id: "html-css", label: "HTML / CSS", group: "Frontend", radius: 24 },
+  { id: "react", label: "React", group: "Frontend", radius: 38 },
+  { id: "vue", label: "Vue / Nuxt", group: "Frontend", radius: 35 },
+  { id: "angular", label: "Angular", group: "Frontend", radius: 28 },
+  { id: "typescript", label: "TypeScript", group: "Frontend", radius: 40 },
+  { id: "tailwind", label: "Tailwind", group: "Frontend", radius: 33 },
+  { id: "html-css", label: "HTML / CSS", group: "Frontend", radius: 30 },
   // Backend
-  { id: "nodejs", label: "Node.js", group: "Backend", radius: 26 },
-  { id: "python", label: "Python", group: "Backend", radius: 28 },
-  { id: "flask", label: "Flask", group: "Backend", radius: 22 },
-  { id: "php", label: "PHP / Laravel", group: "Backend", radius: 22 },
-  { id: "c-cpp", label: "C / C++", group: "Backend", radius: 20 },
-  { id: "csharp", label: "C#", group: "Backend", radius: 20 },
-  { id: "rest-api", label: "REST API", group: "Backend", radius: 24 },
+  { id: "nodejs", label: "Node.js", group: "Backend", radius: 33 },
+  { id: "python", label: "Python", group: "Backend", radius: 35 },
+  { id: "flask", label: "Flask", group: "Backend", radius: 28 },
+  { id: "php", label: "PHP / Laravel", group: "Backend", radius: 28 },
+  { id: "c-cpp", label: "C / C++", group: "Backend", radius: 26 },
+  { id: "csharp", label: "C#", group: "Backend", radius: 26 },
+  { id: "rest-api", label: "REST API", group: "Backend", radius: 30 },
   // DevOps & Cloud
-  { id: "aws", label: "AWS", group: "DevOps & Cloud", radius: 28 },
-  { id: "docker", label: "Docker", group: "DevOps & Cloud", radius: 26 },
-  { id: "kubernetes", label: "Kubernetes", group: "DevOps & Cloud", radius: 24 },
-  { id: "cicd", label: "GitHub Actions", group: "DevOps & Cloud", radius: 24 },
-  { id: "linux", label: "Linux", group: "DevOps & Cloud", radius: 22 },
-  { id: "grafana", label: "Grafana", group: "DevOps & Cloud", radius: 20 },
+  { id: "aws", label: "AWS", group: "DevOps & Cloud", radius: 35 },
+  { id: "docker", label: "Docker", group: "DevOps & Cloud", radius: 33 },
+  { id: "kubernetes", label: "Kubernetes", group: "DevOps & Cloud", radius: 30 },
+  { id: "cicd", label: "GitHub Actions", group: "DevOps & Cloud", radius: 30 },
+  { id: "linux", label: "Linux", group: "DevOps & Cloud", radius: 28 },
+  { id: "grafana", label: "Grafana", group: "DevOps & Cloud", radius: 26 },
   // Data & Testing
-  { id: "postgresql", label: "PostgreSQL", group: "Data & Testing", radius: 26 },
-  { id: "mysql", label: "MySQL", group: "Data & Testing", radius: 22 },
-  { id: "mongodb", label: "MongoDB", group: "Data & Testing", radius: 22 },
-  { id: "kafka", label: "Apache Kafka", group: "Data & Testing", radius: 22 },
-  { id: "playwright", label: "Playwright", group: "Data & Testing", radius: 22 },
-  { id: "vitest", label: "Vitest", group: "Data & Testing", radius: 20 },
-  { id: "figma", label: "Figma", group: "Frontend", radius: 20 },
+  { id: "postgresql", label: "PostgreSQL", group: "Data & Testing", radius: 33 },
+  { id: "mysql", label: "MySQL", group: "Data & Testing", radius: 28 },
+  { id: "mongodb", label: "MongoDB", group: "Data & Testing", radius: 28 },
+  { id: "kafka", label: "Apache Kafka", group: "Data & Testing", radius: 28 },
+  { id: "playwright", label: "Playwright", group: "Data & Testing", radius: 28 },
+  { id: "vitest", label: "Vitest", group: "Data & Testing", radius: 26 },
+  { id: "figma", label: "Figma", group: "Frontend", radius: 26 },
 ];
 
 const edges: SkillEdge[] = [
@@ -111,18 +111,18 @@ const SkillWeb = () => {
 
   const initNodes = useCallback((w: number, h: number) => {
     const groupCenters: Record<string, { cx: number; cy: number }> = {
-      Frontend: { cx: w * 0.25, cy: h * 0.3 },
-      Backend: { cx: w * 0.75, cy: h * 0.3 },
-      "DevOps & Cloud": { cx: w * 0.75, cy: h * 0.72 },
-      "Data & Testing": { cx: w * 0.25, cy: h * 0.72 },
+      Frontend: { cx: w * 0.22, cy: h * 0.26 },
+      Backend: { cx: w * 0.78, cy: h * 0.26 },
+      "DevOps & Cloud": { cx: w * 0.78, cy: h * 0.76 },
+      "Data & Testing": { cx: w * 0.22, cy: h * 0.76 },
     };
 
     nodesRef.current = skills.map((s) => {
       const gc = groupCenters[s.group];
       return {
         ...s,
-        x: gc.cx + (Math.random() - 0.5) * w * 0.22,
-        y: gc.cy + (Math.random() - 0.5) * h * 0.18,
+        x: gc.cx + (Math.random() - 0.5) * w * 0.26,
+        y: gc.cy + (Math.random() - 0.5) * h * 0.22,
         vx: 0,
         vy: 0,
       };
@@ -196,7 +196,7 @@ const SkillWeb = () => {
           const dx = other.x - a.x;
           const dy = other.y - a.y;
           const dist = Math.sqrt(dx * dx + dy * dy) || 1;
-          const targetDist = 140;
+          const targetDist = 180;
           const force = (dist - targetDist) * 0.0008;
           a.vx += (dx / dist) * force;
           a.vy += (dy / dist) * force;
@@ -207,14 +207,6 @@ const SkillWeb = () => {
         const cy = h / 2;
         a.vx += (cx - a.x) * 0.00008;
         a.vy += (cy - a.y) * 0.00008;
-
-        // Mouse interaction
-        if (mouse && hovered) {
-          if (a.id === hovered) {
-            a.vx += (mouse.x - a.x) * 0.015;
-            a.vy += (mouse.y - a.y) * 0.015;
-          }
-        }
 
         // Very gentle drift (much less wobbly)
         a.vx += (Math.random() - 0.5) * 0.005;
@@ -293,17 +285,23 @@ const SkillWeb = () => {
           ctx.fill();
         }
 
-        // Node circle
+        // Opaque background circle — masks any edges passing underneath
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, r, 0, Math.PI * 2);
+        ctx.fillStyle = "hsl(210, 14%, 15%)";
+        ctx.fill();
+
+        // Node circle (colored / dimmed overlay)
         ctx.beginPath();
         ctx.arc(node.x, node.y, r, 0, Math.PI * 2);
 
         if (isDimmed) {
-          ctx.fillStyle = "hsla(210, 14%, 12%, 0.6)";
-          ctx.strokeStyle = "hsla(210, 12%, 20%, 0.3)";
+          ctx.fillStyle = "hsla(210, 14%, 15%, 0.6)";
+          ctx.strokeStyle = "hsla(210, 12%, 23%, 0.3)";
         } else {
           ctx.fillStyle = isHovered
             ? groupColor.color.replace(")", ", 0.25)").replace("hsl(", "hsla(")
-            : "hsla(210, 14%, 12%, 0.9)";
+            : "hsla(210, 14%, 15%, 0.9)";
           ctx.strokeStyle = isHovered || isConnected
             ? groupColor.color.replace(")", ", 0.7)").replace("hsl(", "hsla(")
             : "hsla(210, 12%, 22%, 0.6)";
@@ -380,26 +378,13 @@ const SkillWeb = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-[600px] md:h-[750px] lg:h-[800px]">
+    <div className="relative w-full h-[700px]">
       <canvas
         ref={canvasRef}
         className="w-full h-full rounded-xl"
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
       />
-
-      {/* Legend */}
-      <div className="absolute bottom-4 left-4 flex flex-wrap gap-3">
-        {Object.entries(GROUPS).map(([name, { color }]) => (
-          <div key={name} className="flex items-center gap-1.5">
-            <div
-              className="w-2.5 h-2.5 rounded-full"
-              style={{ background: color }}
-            />
-            <span className="text-xs text-muted-foreground">{name}</span>
-          </div>
-        ))}
-      </div>
 
       {/* Tooltip */}
       <AnimatePresence>
@@ -427,12 +412,6 @@ const SkillWeb = () => {
                 {hoveredSkill.node.group}
               </span>
             </div>
-            <p className="text-xs text-muted-foreground">
-              Connected to:{" "}
-              {hoveredSkill.connections
-                .map((c) => skills.find((s) => s.id === c)?.label)
-                .join(", ")}
-            </p>
           </motion.div>
         )}
       </AnimatePresence>

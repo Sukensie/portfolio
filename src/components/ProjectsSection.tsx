@@ -2,40 +2,40 @@ import ProjectCard from "./ProjectCard";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    description: "Led development of a full-featured e-commerce platform serving 50k+ MAU. Designed the real-time inventory system and integrated Stripe payment flows. Architected the admin dashboard from scratch with role-based access control.",
-    role: "Lead Fullstack Developer",
-    impact: "50k+ monthly active users, 99.9% uptime, 40% faster checkout flow",
-    tags: ["React", "Node.js", "PostgreSQL", "Stripe", "Redis"],
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80",
-    link: "#",
+    title: "Folkæt — People Matching Platform",
+    description: "I drove full-stack product development from concept to delivery. I elevated UX and performance in our React frontend while building and operating a scalable, resilient cloud-native backend with Flask and PostgreSQL. Translated product goals into clear scope, influenced direction, and aligned the team around focused, high-impact iterations.",
+    role: "Fullstack Product Engineer",
+    impact: "TODO: 50k+ monthly active users, 99.9% uptime, 40% faster checkout flow",
+    tags: ["React", "Flask", "PostgreSQL", "CI/CD", "TailwindCSS", "Docker", "SW Architecture", "GitOps"],
+    image: "folkaet-1-100.jpg",
+    link: "https://www.folkaet.com",
   },
   {
-    title: "SaaS Analytics Dashboard",
-    description: "Built the entire frontend and data visualization layer for a B2B analytics product. Implemented complex D3.js charts, real-time data streaming, and an automated reporting pipeline that reduced manual reporting by 80%.",
-    role: "Senior Frontend Engineer",
-    impact: "80% reduction in manual reporting, 3x faster data loading",
-    tags: ["TypeScript", "Next.js", "D3.js", "AWS", "WebSockets"],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-    link: "#",
+    title: "Nabogo — DevOps & Architecture Transformation",
+    description: "Researched and tackled the scalability bottlenecks of a growing carpooling startup. Transformed a monolithic backend into a distributed, event-driven architecture while introducing DevOps practices, automated infrastructure scaling, and full system observability.",
+    role: "DevOps Engineer · MSc Thesis Project",
+    impact: "Reduced average request latencies by over 450%, automated deployment pipelines, and gave the team real-time visibility into their infrastructure for the first time.",
+    tags: ["SW Architecture", "DevOps", "Microservices", "Kubernetes", "CI/CD", "Monitoring", "Python", "Laravel"],
+    image: "nabogo.jpg",
+    link: "https://nabogo.com/en/",
   },
   {
-    title: "Healthcare Booking System",
-    description: "Designed and implemented a HIPAA-compliant patient scheduling system. Built the real-time availability engine, automated reminder system, and patient-facing booking interface handling 10k+ appointments monthly.",
-    role: "Fullstack Developer",
-    impact: "10k+ monthly appointments, 60% reduction in no-shows",
-    tags: ["React", "Python", "FastAPI", "Redis", "PostgreSQL"],
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=80",
-    link: "#",
+    title: "Real-time Bitcoin Price Prediction",
+    description: "Built a real-time Bitcoin price prediction system combining live market data with social media sentiment analysis. Part of an MSc Big Data course, the project explored how public sentiment influences crypto markets.",
+    role: "Fullstack Developer · DevOps Engineer",
+    impact: "Demonstrated a measurable correlation between sentiment signals and short-term price movements, using a full real-time data pipeline from ingestion to prediction.",
+    tags: ["Python", "Apache Kafka", "Apache Spark", "HDFS", "Big Data", "AI/ML"],
+    image: "BTC.jpg",
+    link: "https://github.com/Sukensie/bicoin-price-prediction",
   },
   {
-    title: "Real-Time Collaboration Tool",
-    description: "Core engineer on a multiplayer document editor. Implemented conflict resolution using CRDTs, built the WebSocket infrastructure for live cursors and presence, and designed the offline-first sync architecture.",
-    role: "Backend / Infrastructure Engineer",
+    title: "Intelligent Banker — Fintech Platform",
+    description: "I worked across multiple fintech products, both customer-facing and internal tooling. I contributed to visual identities, UX improvements, third-party API integrations, and cleaning up legacy systems.",
+    role: "Junior Web Developer",
     impact: "Sub-100ms sync latency, 99.95% data consistency",
-    tags: ["Go", "WebSockets", "CRDTs", "Vue.js", "Docker"],
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80",
-    link: "#",
+    tags: ["Nuxt", "Vue", "Node.js", "TypeScript", "AWS Lambda", "Tailwind", "REST API", "GitOps"],
+    image: "ib.jpg",
+    link: "https://intelligentbanker.com/",
   },
 ];
 
@@ -48,7 +48,7 @@ const ProjectsSection = () => {
             What I've Built
           </p>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
-            Projects I'm proud of.
+            Selected Projects I've worked on<span className="text-primary">.</span>
           </h2>
           <p className="text-muted-foreground mt-4 max-w-xl">
             A selection of production systems I've designed, built, and shipped. 
@@ -56,7 +56,7 @@ const ProjectsSection = () => {
           </p>
         </div>
 
-        <div className="space-y-16 md:space-y-24">
+        <div className="space-y-4 md:space-y-24">
           {projects.map((project, i) => (
             <ProjectCard key={project.title} {...project} index={i} />
           ))}

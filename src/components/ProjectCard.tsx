@@ -77,17 +77,6 @@ const ProjectCard = ({ title, description, role, impact, tags, index, image, lin
               </span>
             ))}
           </div>
-
-          {link && link !== "#" && (
-            <a
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
-            >
-              View Project <ArrowUpRight className="w-4 h-4" />
-            </a>
-          )}
         </div>
       </div>
     </motion.div>

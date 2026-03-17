@@ -37,7 +37,7 @@ const Navbar = () => {
         </div>
 
         <a
-          href="/resume.pdf"
+          href="/tomas-soucek-cv.pdf"
           target="_blank"
           className="font-mono text-xs tracking-wider bg-secondary px-4 py-2 rounded-lg text-foreground hover:bg-primary hover:text-primary-foreground transition-all"
           onClick={handleResumeClick}

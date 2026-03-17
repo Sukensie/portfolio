@@ -11,7 +11,7 @@ const projects = [
       </>
     ),
     tags: ["React", "Flask", "PostgreSQL", "CI/CD", "TailwindCSS", "Docker", "SW Architecture", "GitOps"],
-    image: "folkaet-1-100.jpg",
+    image: "folkaet.jpg",
     link: "https://www.folkaet.com",
   },
   {

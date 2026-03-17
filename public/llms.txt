@@ -1,0 +1,22 @@
+# Tomáš Souček
+
+> Fullstack developer building reliable, polished web applications from frontend to backend.
+
+## About
+
+Tomáš Souček is a fullstack developer based in Denmark. He specialises in building modern web
+applications with a strong focus on code quality, clean architecture, and good user experience.
+
+## Skills
+
+- **Frontend**: React, Vue / Nuxt, TypeScript, Tailwind CSS, Angular, HTML / CSS, Figma
+- **Backend**: Node.js, Python, Flask, PHP, Laravel, C#, C / C++, REST API
+- **DevOps & Cloud**: Cloud Computing (AWS), Kubernetes, GitHub Actions (CI/CD), Linux, Grafana, Prometheus
+- **Data & Testing**: PostgreSQL, MongoDB, MySQL, Apache Spark, Playwright, Vitest
+- **Architecture & Quality**: Software Architecture, Clean Code, Microservices, Event Driven Architecture, UML
+
+## Links
+
+- Website: https://soucek.dk
+- GitHub: https://github.com/sukensie
+- LinkedIn: https://linkedin.com/in/soucek-tomas

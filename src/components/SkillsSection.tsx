@@ -3,7 +3,7 @@ import SkillWeb from "./SkillWeb";
 
 const SkillsSection = () => {
   return (
-    <section id="skills" className="py-32 px-6 border-t border-border">
+    <section id="skills" className="py-16 md:py-32 px-6 border-t border-border">
       <div className="max-w-7xl mx-auto">
         <div className="mb-6">
           <p className="font-mono text-sm tracking-[0.3em] uppercase text-primary mb-4">

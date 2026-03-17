@@ -3,7 +3,7 @@ import { Mail, Github, Linkedin, ArrowUpRight } from "lucide-react";
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="py-32 px-6 border-t border-border">
+    <section id="contact" className="py-16 md:py-32 px-6 border-t border-border">
       <div className="max-w-7xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -18,12 +18,12 @@ const ContactSection = () => {
             Open to work - let's talk!
           </h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto mb-12">
-            I'm currently looking for fullstack, frontend, or backend roles&nbsp;—&nbsp;ideally in a place that values lean thinking as much as clean code. If you're building something interesting and need someone who won't over-engineer your MVP, I'm also all ears. <br/>My inbox is open 24/7 😉 
+            I'm currently looking for fullstack, frontend, or backend roles&nbsp;—&nbsp;ideally in a place that values lean thinking as much as clean code. If you're building something interesting and need someone who won't over-developer your MVP, I'm also all ears. <br/>My inbox is open 24/7 😉 
 
           </p>
 
           <a
-            href="mailto:hello@yourdomain.com"
+            href="mailto:tomas@soucek.dk"
             className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-10 py-4 rounded-xl font-medium text-lg hover:opacity-90 transition-all hover:scale-[1.02] active:scale-[0.98] group"
           >
             <Mail className="w-5 h-5" />

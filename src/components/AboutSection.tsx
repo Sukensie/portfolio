@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-32 px-6 border-t border-border">
+    <section id="about" className="py-16 md:py-32 px-6 border-t border-border">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 md:gap-0 items-start">
           <div>
@@ -33,7 +33,7 @@ const AboutSection = () => {
               Who's behind the code
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              I'm a Czech-born fullstack engineer who ended up in Denmark to chase his dream of Scandinavian life. I've spent the last few years working across fintech, mobility, and product startups, picking up an MSc in Software Engineering from SDU and (almost) profficiency in Danish along the way.
+              I'm a Czech-born fullstack developer who ended up in Denmark to chase his dream of Scandinavian life. I've spent the last few years working across fintech, mobility, and product startups, picking up an MSc in Software Engineering from SDU and (almost) profficiency in Danish along the way.
             </p>
             <p className="text-muted-foreground leading-relaxed">
               I enjoy the full stack because understanding the whole system is what lets me spot the real problem early. I've helped teams reduce latencies, untangle architectures, and ship UIs people actually enjoy using — and I've learned that the best solution is usually the simpler one.

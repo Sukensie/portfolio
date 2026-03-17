@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import type { ReactNode } from "react";
 
 interface ProjectCardProps {
   title: string;
-  description: string;
+  description: ReactNode;
   role: string;
-  impact: string;
+  impact: ReactNode;
   tags: string[];
   index: number;
   image: string;

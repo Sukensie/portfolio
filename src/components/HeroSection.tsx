@@ -28,7 +28,7 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6">
       {/* Soft gradient blobs */}
-      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] rounded-full opacity-[0.035]"
+      <div className="absolute top-1/4 left-1/4 md:w-[500px] md:h-[500px] rounded-full opacity-[0.035]"
         style={{ background: 'radial-gradient(circle, hsl(155 55% 50%), transparent 70%)' }}
       />
       <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full opacity-[0.025]"
@@ -72,7 +72,7 @@ const HeroSection = () => {
               </AnimatePresence>
             </span>
           </span>
-          <span className="relative -top-10 right-5 md:-top-20 opacity-50 select-none" aria-hidden="true">👋</span>
+          <span className="relative hidden md:inline -top-10 right-5 md:-top-20 opacity-50 select-none" aria-hidden="true">👋</span>
         </motion.h1>
         
         <motion.h2
@@ -83,7 +83,7 @@ const HeroSection = () => {
         >
           I'm <span className="text-gradient">Tomáš</span>,{" "}
           <span className="text-muted-foreground font-medium">
-            a fullstack engineer who ships what customers actually need.
+            a fullstack developer who ships what customers actually need.
           </span>
         </motion.h2>
 
@@ -110,7 +110,7 @@ const HeroSection = () => {
           </a>
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 border border-border px-8 py-3.5 rounded-xl font-medium text-foreground hover-glow"
+            className="inline-flex items-center gap-2 border border-border px-8 py-3.5 rounded-xl bg-secondary font-medium text-foreground hover-glow"
           >
             Say Hello 💬
           </a>
@@ -121,7 +121,7 @@ const HeroSection = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.8 }}
-        className="absolute md:bottom-20 left-1/2 -translate-x-1/2"
+        className="hidden md:absolute md:bottom-20 left-1/2 -translate-x-1/2"
       >
         <a href="#projects" className="text-muted-foreground hover:text-primary transition-colors">
           <ArrowDown className="w-5 h-5 animate-bounce" />

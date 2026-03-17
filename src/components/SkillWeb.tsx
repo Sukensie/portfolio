@@ -22,6 +22,7 @@ const GROUPS: Record<string, { color: string; hsl: string }> = {
   Backend: { color: "hsl(175, 50%, 55%)", hsl: "175 50% 55%" },
   "DevOps & Cloud": { color: "hsl(195, 45%, 55%)", hsl: "195 45% 55%" },
   "Data & Testing": { color: "hsl(140, 40%, 55%)", hsl: "140 40% 55%" },
+  "Architecture & Quality": { color: "hsl(260, 40%, 65%)", hsl: "260 40% 65%" },
 };
 
 const skills: Omit<SkillNode, "x" | "y" | "vx" | "vy">[] = [
@@ -55,6 +56,18 @@ const skills: Omit<SkillNode, "x" | "y" | "vx" | "vy">[] = [
   { id: "playwright", label: "Playwright", group: "Data & Testing", radius: 28 },
   { id: "vitest", label: "Vitest", group: "Data & Testing", radius: 26 },
   { id: "figma", label: "Figma", group: "Frontend", radius: 26 },
+  // DevOps & Cloud additions
+  { id: "microservices", label: "Microservices", group: "DevOps & Cloud", radius: 30 },
+  { id: "gitops", label: "GitOps", group: "DevOps & Cloud", radius: 28 },
+  { id: "iac", label: "IaC / Terraform", group: "DevOps & Cloud", radius: 28 },
+  { id: "prometheus", label: "Prometheus", group: "DevOps & Cloud", radius: 26 },
+  // Data & Testing additions
+  { id: "spark", label: "Apache Spark", group: "Data & Testing", radius: 30 },
+  { id: "druid", label: "Apache Druid", group: "Data & Testing", radius: 26 },
+  // Architecture & Quality
+  { id: "sw-arch", label: "SW Architecture", group: "Architecture & Quality", radius: 32 },
+  { id: "clean-code", label: "Clean Code", group: "Architecture & Quality", radius: 28 },
+  { id: "refactoring", label: "Refactoring", group: "Architecture & Quality", radius: 26 },
 ];
 
 const edges: SkillEdge[] = [
@@ -96,6 +109,41 @@ const edges: SkillEdge[] = [
   { source: "playwright", target: "typescript" },
   { source: "vitest", target: "typescript" },
   { source: "playwright", target: "react" },
+  // Cloud & Infrastructure
+  { source: "aws", target: "nodejs" },
+  { source: "aws", target: "kubernetes" },
+  { source: "aws", target: "postgresql" },
+  { source: "iac", target: "kubernetes" },
+  { source: "iac", target: "gitops" },
+  { source: "gitops", target: "cicd" },
+  { source: "prometheus", target: "kubernetes" },
+  { source: "prometheus", target: "grafana" },
+  { source: "microservices", target: "kubernetes" },
+  { source: "microservices", target: "rest-api" },
+  // Big Data & Scalability
+  { source: "kafka", target: "spark" },
+  { source: "spark", target: "druid" },
+  { source: "spark", target: "python" },
+  // Architecture & Quality
+  { source: "clean-code", target: "typescript" },
+  { source: "clean-code", target: "react" },
+  { source: "clean-code", target: "sw-arch" },
+  { source: "sw-arch", target: "microservices" },
+  { source: "refactoring", target: "clean-code" },
+  // Improved cross-cluster connections
+  { source: "angular", target: "rest-api" },
+  { source: "angular", target: "html-css" }, 
+  { source: "flask", target: "postgresql" }, 
+  { source: "php", target: "rest-api" },     
+  { source: "mongodb", target: "python" },   
+  { source: "linux", target: "python" },     
+  { source: "nodejs", target: "docker" },    
+  { source: "docker", target: "cicd" },      
+  { source: "gitops", target: "kubernetes" },
+  { source: "iac", target: "aws" },          
+  { source: "kafka", target: "kubernetes" }, 
+  { source: "sw-arch", target: "rest-api" }, 
+  { source: "vitest", target: "react" },     
 ];
 
 const SkillWeb = () => {
@@ -115,6 +163,7 @@ const SkillWeb = () => {
       Backend: { cx: w * 0.78, cy: h * 0.26 },
       "DevOps & Cloud": { cx: w * 0.78, cy: h * 0.76 },
       "Data & Testing": { cx: w * 0.22, cy: h * 0.76 },
+      "Architecture & Quality": { cx: w * 0.50, cy: h * 0.50 },
     };
 
     nodesRef.current = skills.map((s) => {

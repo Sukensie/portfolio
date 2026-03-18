@@ -11,7 +11,7 @@ const projects = [
       </>
     ),
     tags: ["React", "Flask", "PostgreSQL", "CI/CD", "TailwindCSS", "Docker", "SW Architecture", "GitOps"],
-    image: "folkaet.jpg",
+    image: "folkaet.webp",
     link: "https://www.folkaet.com",
   },
   {
@@ -24,7 +24,7 @@ const projects = [
       </>
     ),
     tags: ["SW Architecture", "DevOps", "Microservices", "Kubernetes", "CI/CD", "Monitoring", "Python", "Laravel"],
-    image: "nabogo.jpg",
+    image: "nabogo.webp",
     link: "https://nabogo.com/en/",
   },
   {
@@ -37,7 +37,7 @@ const projects = [
       </>
     ),
     tags: ["Kubernetes", "Apache Kafka", "Apache Spark", "Apache Druid (HDFS)", "AI/ML", "Python", "Data Analysis", "Distributed Systems"],
-    image: "BTC.jpg",
+    image: "BTC.webp",
     link: "https://github.com/Sukensie/bicoin-price-prediction",
   },
   {
@@ -50,7 +50,7 @@ const projects = [
       </>
     ),
     tags: ["Nuxt", "Vue", "Node.js", "TypeScript", "AWS Lambda", "Tailwind", "REST API", "GitOps"],
-    image: "ib.jpg",
+    image: "ib.webp",
     link: "https://intelligentbanker.com/",
   },
 ];

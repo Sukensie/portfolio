@@ -18,7 +18,7 @@ const AboutSection = () => {
               transition={{ duration: 0.5 }}
               className="relative w-full max-w-[14rem] md:max-w-[22rem] aspect-[3/4] rounded-2xl border-2 border-border/90 bg-card overflow-hidden flex items-center justify-center group"
             >
-              <img src="tomas.jpg" alt="Tomáš Souček" className="w-full h-full object-cover transition-transform" />
+              <img src="tomas.webp" alt="Tomáš Souček" className="w-full h-full object-cover transition-transform" />
             </motion.div>
           </div>
 

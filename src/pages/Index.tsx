@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import "@fontsource/space-grotesk/400.css";
 import "@fontsource/space-grotesk/500.css";
 import "@fontsource/space-grotesk/600.css";
@@ -6,11 +7,12 @@ import "@fontsource/jetbrains-mono/400.css";
 
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import ProjectsSection from "@/components/ProjectsSection";
-import SkillsSection from "@/components/SkillsSection";
-import AboutSection from "@/components/AboutSection";
-import ContactSection from "@/components/ContactSection";
-import Footer from "@/components/Footer";
+
+const ProjectsSection = lazy(() => import("@/components/ProjectsSection"));
+const SkillsSection = lazy(() => import("@/components/SkillsSection"));
+const AboutSection = lazy(() => import("@/components/AboutSection"));
+const ContactSection = lazy(() => import("@/components/ContactSection"));
+const Footer = lazy(() => import("@/components/Footer"));
 
 const Index = () => {
   return (
@@ -18,11 +20,13 @@ const Index = () => {
       <div className="relative z-10">
         <Navbar />
         <HeroSection />
-        <ProjectsSection />
-        <SkillsSection />
-        <AboutSection />
-        <ContactSection />
-        <Footer />
+        <Suspense fallback={null}>
+          <ProjectsSection />
+          <SkillsSection />
+          <AboutSection />
+          <ContactSection />
+          <Footer />
+        </Suspense>
       </div>
     </div>
   );

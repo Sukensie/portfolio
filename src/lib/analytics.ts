@@ -1,25 +1,25 @@
-import ReactGA from "react-ga4";
-
 const GA_MEASUREMENT_ID = import.meta.env.VITE_GA_MEASUREMENT_ID as string | undefined;
 const LOCAL_HOSTS = new Set(["localhost", "127.0.0.1", "::1"]);
 
-let isInitialized = false;
+type ReactGAInstance = (typeof import("react-ga4"))["default"];
+let reactGA: ReactGAInstance | null = null;
 
 export const initializeAnalytics = (): void => {
-  if (isInitialized || !GA_MEASUREMENT_ID || LOCAL_HOSTS.has(window.location.hostname)) {
+  if (reactGA || !GA_MEASUREMENT_ID || LOCAL_HOSTS.has(window.location.hostname)) {
     return;
   }
 
-  ReactGA.initialize(GA_MEASUREMENT_ID);
-  isInitialized = true;
+  setTimeout(() => {
+    import("react-ga4").then(({ default: ReactGA }) => {
+      ReactGA.initialize(GA_MEASUREMENT_ID!);
+      reactGA = ReactGA;
+    });
+  }, 0);
 };
 
 export const trackPageView = (path: string): void => {
-  if (!isInitialized) {
-    return;
-  }
-
-  ReactGA.send({ hitType: "pageview", page: path });
+  if (!reactGA) return;
+  reactGA.send({ hitType: "pageview", page: path });
 };
 
 type EventParams = {
@@ -29,9 +29,6 @@ type EventParams = {
 };
 
 export const trackEvent = ({ category, action, label }: EventParams): void => {
-  if (!isInitialized) {
-    return;
-  }
-
-  ReactGA.event({ category, action, label });
+  if (!reactGA) return;
+  reactGA.event({ category, action, label });
 };

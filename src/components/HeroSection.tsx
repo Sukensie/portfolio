@@ -52,7 +52,7 @@ const HeroSection = () => {
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
           className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95] mb-4"
         >
           Hej{" "}
@@ -78,7 +78,7 @@ const HeroSection = () => {
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
           className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-8"
         >
           I'm <span className="text-gradient">Tomáš</span>,{" "}
@@ -90,7 +90,7 @@ const HeroSection = () => {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
           className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed mb-12"
         >
          Most engineering problems aren't really technical, they're scope problems. I help product teams turn unclear requirements into focused, working software, covering everything from modern frontends and scalable backends to cloud infrastructure. My real value comes from building the right thing, not just the next thing.
@@ -99,7 +99,7 @@ const HeroSection = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
+          transition={{ duration: 0.6, delay: 0.7 }}
           className="flex flex-wrap items-center gap-4"
         >
           <a
@@ -116,17 +116,6 @@ const HeroSection = () => {
           </a>
         </motion.div>
       </div>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.8 }}
-        className="hidden md:absolute md:bottom-20 left-1/2 -translate-x-1/2"
-      >
-        <a href="#projects" className="text-muted-foreground hover:text-primary transition-colors">
-          <ArrowDown className="w-5 h-5 animate-bounce" />
-        </a>
-      </motion.div>
     </section>
   );
 };

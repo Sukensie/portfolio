@@ -1,9 +1,6 @@
 import { lazy, Suspense } from "react";
-import "@fontsource/space-grotesk/400.css";
-import "@fontsource/space-grotesk/500.css";
-import "@fontsource/space-grotesk/600.css";
-import "@fontsource/space-grotesk/700.css";
-import "@fontsource/jetbrains-mono/400.css";
+import "@fontsource-variable/space-grotesk";
+import "@fontsource-variable/jetbrains-mono";
 
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
@@ -19,12 +16,16 @@ const Index = () => {
     <div className="relative isolate min-h-screen bg-background">
       <div className="relative z-10">
         <Navbar />
-        <HeroSection />
+        <main>
+          <HeroSection />
+          <Suspense fallback={null}>
+            <ProjectsSection />
+            <SkillsSection />
+            <AboutSection />
+            <ContactSection />
+          </Suspense>
+        </main>
         <Suspense fallback={null}>
-          <ProjectsSection />
-          <SkillsSection />
-          <AboutSection />
-          <ContactSection />
           <Footer />
         </Suspense>
       </div>

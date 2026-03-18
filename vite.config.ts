@@ -27,6 +27,12 @@ export default defineConfig(({ mode }) => ({
   build: {
     rollupOptions: {
       output: {
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name?.match(/\.woff2?$/)) {
+            return "assets/fonts/[name][extname]";
+          }
+          return "assets/[name]-[hash][extname]";
+        },
         manualChunks: {
           "react-vendor": ["react", "react-dom"],
           "router": ["react-router-dom"],

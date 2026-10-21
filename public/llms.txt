@@ -14,6 +14,7 @@ applications with a strong focus on code quality, clean architecture, and good u
 - **DevOps & Cloud**: Cloud Computing (AWS), Kubernetes, GitHub Actions (CI/CD), Linux, Grafana, Prometheus
 - **Data & Testing**: PostgreSQL, MongoDB, MySQL, Apache Spark, Playwright, Vitest
 - **Architecture & Quality**: Software Architecture, Clean Code, Microservices, Event Driven Architecture, UML
+- **AI & Agents**: Agentic Workflows, Claude Code, MCP (Model Context Protocol), Prompt Engineering
 
 ## Links
 

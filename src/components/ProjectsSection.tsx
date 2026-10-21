@@ -2,6 +2,19 @@ import ProjectCard from "./ProjectCard";
 
 const projects = [
   {
+    title: "PolAds — EU Political Advertising Transparency Register",
+    description: "A free, public register that shows who is behind political advertising in Europe: who paid for an ad, how much was spent, who was targeted, and where it ran. The platform helps advertisers and publishers comply with the EU Political Advertising Regulation (EU) 2024/900 across all 27 member states.",
+    role: "Agentic AI Developer · Product Owner",
+    impact: (
+      <>
+        Working at <strong>STEP Network</strong>, I build the platform's <strong>technical infrastructure</strong>, the <strong>registration flow</strong> and the <strong>public register</strong> that lets any citizen search transparency notices without an account. I also build <strong>integrations with customers' existing systems</strong> and <strong>automate the processes</strong> behind publishing and reporting, so that compliance with a brand-new EU regulation <strong>doesn't depend on manual work</strong>.
+      </>
+    ),
+    tags: ["Agentic AI", "Process Automation", "System Integrations", "Infrastructure", "Public Register", "EU Regulation 2024/900"],
+    image: "polads.webp",
+    link: "https://polads.eu",
+  },
+  {
     title: "Folkæt — People Matching Platform",
     description: "I drove full-stack product development from concept to delivery. I elevated UX and performance in our React frontend while building and operating a scalable, resilient cloud-native backend with Flask and PostgreSQL. Translated product goals into clear scope, influenced direction, and aligned the team around focused, high-impact iterations.",
     role: "Fullstack Product Engineer",

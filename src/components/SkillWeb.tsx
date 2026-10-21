@@ -23,6 +23,7 @@ const GROUPS: Record<string, { color: string; hsl: string }> = {
   "DevOps & Cloud": { color: "hsl(195, 45%, 55%)", hsl: "195 45% 55%" },
   "Data & Testing": { color: "hsl(140, 40%, 55%)", hsl: "140 40% 55%" },
   "Architecture & Quality": { color: "hsl(260, 40%, 65%)", hsl: "260 40% 65%" },
+  "AI & Agents": { color: "hsl(35, 70%, 60%)", hsl: "35 70% 60%" },
 };
 
 const skills: Omit<SkillNode, "x" | "y" | "vx" | "vy">[] = [
@@ -63,6 +64,11 @@ const skills: Omit<SkillNode, "x" | "y" | "vx" | "vy">[] = [
   { id: "uml", label: "UML", group: "Architecture & Quality", radius: 25 },
   { id: "eda", label: "Event Driven Architecture", group: "Architecture & Quality", radius: 39 },
   { id: "microservices", label: "Microservices", group: "Architecture & Quality", radius: 35 },
+  // AI & Agents
+  { id: "agentic", label: "Agentic Workflows", group: "AI & Agents", radius: 46 },
+  { id: "claude-code", label: "Claude Code", group: "AI & Agents", radius: 36 },
+  { id: "mcp", label: "MCP", group: "AI & Agents", radius: 30 },
+  { id: "prompt-eng", label: "Prompt Engineering", group: "AI & Agents", radius: 36 },
 ];
 
 const edges: SkillEdge[] = [
@@ -160,6 +166,13 @@ const edges: SkillEdge[] = [
   { source: "microservices", target: "sw-arch" },
   { source: "microservices", target: "uml" },
   { source: "sw-arch", target: "uml" },
+  // AI & Agents - complete graph (6 edges)
+  { source: "agentic", target: "claude-code" },
+  { source: "agentic", target: "mcp" },
+  { source: "agentic", target: "prompt-eng" },
+  { source: "claude-code", target: "mcp" },
+  { source: "claude-code", target: "prompt-eng" },
+  { source: "mcp", target: "prompt-eng" },
 ];
 
 const SkillWeb = () => {
@@ -175,18 +188,19 @@ const SkillWeb = () => {
 
   const initNodes = useCallback((w: number, h: number) => {
     const groupCenters: Record<string, { cx: number; cy: number }> = {
-      Frontend: { cx: w * 0.22, cy: h * 0.26 },
-      Backend: { cx: w * 0.78, cy: h * 0.26 },
-      "DevOps & Cloud": { cx: w * 0.78, cy: h * 0.76 },
-      "Data & Testing": { cx: w * 0.22, cy: h * 0.76 },
-      "Architecture & Quality": { cx: w * 0.50, cy: h * 0.50 },
+      Frontend: { cx: w * 0.17, cy: h * 0.25 },
+      "AI & Agents": { cx: w * 0.50, cy: h * 0.25 },
+      Backend: { cx: w * 0.83, cy: h * 0.25 },
+      "Data & Testing": { cx: w * 0.17, cy: h * 0.75 },
+      "Architecture & Quality": { cx: w * 0.50, cy: h * 0.75 },
+      "DevOps & Cloud": { cx: w * 0.83, cy: h * 0.75 },
     };
 
     nodesRef.current = skills.map((s) => {
       const gc = groupCenters[s.group];
       return {
         ...s,
-        x: gc.cx + (Math.random() - 0.5) * w * 0.26,
+        x: gc.cx + (Math.random() - 0.5) * w * 0.2,
         y: gc.cy + (Math.random() - 0.5) * h * 0.22,
         vx: 0,
         vy: 0,
